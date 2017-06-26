@@ -1,2 +1,37 @@
 
 Generate one or more random locally administrated MAC addresses.
+
+
+Usage: macgen [OPTIONS]
+  Generate random locally administrated MAC address(es).
+  Each MAC address is by default printed using format 01-23-45-67-89-ab
+
+  -m, --multicast    Generate multicast MAC address(es)
+  -c, --colon        Print the MAC address using format 01:23:45:67:89:ab
+  -d, --dots         Print the MAC address using format 0123.4567.89ab
+  -u, --uppercase    Print hex characters in uppercase instead of lowercase
+  -n, --no-newline   Do not output the trailing newline
+  -r, --repeat=NUM   Generate NUM MAC addresses
+  -H, --help         Print this help message
+
+
+Examples:
+
+    # macgen
+    46-a0-35-06-17-e9
+
+    # macgen -c
+    36:c2:ba:9a:94:d3
+
+    # macgen -d
+    ce26.a99c.0297
+
+    # macgen -c -r4
+    12:aa:1c:35:d3:e6
+    66:6a:5e:08:28:1c
+    2e:28:ec:52:e1:9d
+    d6:17:71:cb:bc:c6
+
+    # macgen -r2 -u
+    AE-DF-28-B2-A9-45
+    E2-AD-61-6A-61-46
