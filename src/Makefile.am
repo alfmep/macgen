@@ -22,4 +22,5 @@ AM_CXXFLAGS = -Wall -pipe -std=c++11 -O2 -g
 bin_PROGRAMS = macgen
 macgen_SOURCES  =
 macgen_SOURCES += appargs.cpp
+macgen_SOURCES += appargs.hpp
 macgen_SOURCES += main.cpp
