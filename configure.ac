@@ -1,4 +1,4 @@
-AC_INIT([macgen], [1.0.0], [info@ultramarin.se])
+AC_INIT([macgen], [1.0.1], [info@ultramarin.se])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign dist-bzip2])
 
 AC_PROG_CC
