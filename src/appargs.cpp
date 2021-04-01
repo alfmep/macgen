@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Ultramarin Design AB <dan@ultramarin.se>
+ * Copyright (C) 2017,2021 Ultramarin Design AB <dan@ultramarin.se>
  *
  * This file is part of macgen.
  *
@@ -33,13 +33,14 @@ namespace macgen {
             << "  Each MAC address is by default printed using format 01-23-45-67-89-ab"
             << std::endl
             << std::endl
-            << "  -m, --multicast    Generate multicast MAC address(es)" << std::endl
+            << "  -m, --multicast    Generate multicast MAC address(es)." << std::endl
             << "  -c, --colon        Print the MAC address using format 01:23:45:67:89:ab" << std::endl
             << "  -d, --dots         Print the MAC address using format 0123.4567.89ab" << std::endl
-            << "  -u, --uppercase    Print hex characters in uppercase instead of lowercase" << std::endl
-            << "  -n, --no-newline   Do not output the trailing newline" << std::endl
-            << "  -r, --repeat=NUM   Generate NUM MAC addresses" << std::endl
-            << "  -H, --help         Print this help message" << std::endl
+            << "  -u, --uppercase    Print hex characters in uppercase instead of lowercase." << std::endl
+            << "  -n, --no-newline   Do not output the trailing newline." << std::endl
+            << "  -r, --repeat=NUM   Generate NUM MAC addresses." << std::endl
+            << "  -v, --version      Print version and exit." << std::endl
+            << "  -h, --help         Print this help message." << std::endl
             << std::endl;
 
         exit (exit_code);
@@ -62,9 +63,11 @@ namespace macgen {
             { "uppercase",  no_argument,       0, 'u'},
             { "no-newline", no_argument,       0, 'n'},
             { "repeat",     required_argument, 0, 'r'},
-            { "help",       no_argument,       0, 'H'},
+            { "version",    no_argument,       0, 'v'},
+            { "help",       no_argument,       0, 'h'},
+            { 0, 0, 0, 0}
         };
-        const char* arg_format = "mcdunr:H";
+        const char* arg_format = "mcdunr:vh";
 
         while (1) {
             int c = getopt_long (argc, argv, arg_format, long_options, NULL);
@@ -93,7 +96,11 @@ namespace macgen {
                     print_usage_and_exit (std::cerr, 1);
                 }
                 break;
-            case 'H':
+            case 'v':
+                std::cout << PACKAGE_STRING << std::endl;
+                exit (0);
+                break;
+            case 'h':
                 print_usage_and_exit (std::cout, 0);
                 break;
             default:
