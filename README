@@ -12,6 +12,7 @@ Usage: macgen [OPTIONS]
   -u, --uppercase    Print hex characters in uppercase instead of lowercase.
   -n, --no-newline   Do not output the trailing newline.
   -r, --repeat=NUM   Generate NUM MAC addresses.
+  -s, --seed=NUMBER  Set a specific random seed.
   -v, --version      Print version and exit.
   -h, --help         Print this help message.
 

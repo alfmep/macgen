@@ -28,6 +28,7 @@ namespace macgen {
         bool uppercase;
         bool no_newline;
         int repeat;
+        unsigned long seed;
 
         appargs (int argc, char* argv[]);
     };

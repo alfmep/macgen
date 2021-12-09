@@ -34,6 +34,9 @@ int main (int argc, char* argv[])
     std::default_random_engine re (rd());
     std::uniform_int_distribution<uint16_t> random_value (1, 65535);
 
+    // Set random seed
+    re.seed (args.seed);
+
     std::cout << std::hex;
     if (args.uppercase)
         std::cout << std::uppercase;

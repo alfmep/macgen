@@ -17,6 +17,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include <iostream>
+#include <chrono>
+#include <string>
 #include <getopt.h>
 #include <appargs.hpp>
 
@@ -46,6 +48,7 @@ namespace macgen {
             << "  -u, --uppercase    Print hex characters in uppercase instead of lowercase." << std::endl
             << "  -n, --no-newline   Do not output the trailing newline." << std::endl
             << "  -r, --repeat=NUM   Generate NUM MAC addresses." << std::endl
+            << "  -s, --seed=NUMBER  Set a specific random seed." << std::endl
             << "  -v, --version      Print version and exit." << std::endl
             << "  -h, --help         Print this help message." << std::endl
             << std::endl;
@@ -70,11 +73,16 @@ namespace macgen {
             { "uppercase",  no_argument,       0, 'u'},
             { "no-newline", no_argument,       0, 'n'},
             { "repeat",     required_argument, 0, 'r'},
+            { "seed",       required_argument, 0, 's'},
             { "version",    no_argument,       0, 'v'},
             { "help",       no_argument,       0, 'h'},
             { 0, 0, 0, 0}
         };
-        const char* arg_format = "mcdunr:vh";
+        const char* arg_format = "mcdunr:s:vh";
+
+        // Set default random seed, milliseconds since epoch
+        auto now = std::chrono::system_clock().now ();
+        seed = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count ();
 
         while (1) {
             int c = getopt_long (argc, argv, arg_format, long_options, NULL);
@@ -97,10 +105,24 @@ namespace macgen {
                 no_newline = true;
                 break;
             case 'r':
-                repeat = atoi (optarg);
-                if (repeat == 0) {
-                    std::cerr << "Invalid repeat value: " << optarg << std::endl << std::endl;
-                    print_usage_and_exit (std::cerr, 1);
+                try {
+                    repeat = std::stoi (optarg);
+                }catch (...) {
+                    repeat = -1;
+                }
+                if (repeat < 1) {
+                    std::cerr << "Error: Invalid repeat value: " << optarg
+                              << " (use option '-h' for help)" << std::endl;
+                    exit (1);
+                }
+                break;
+            case 's':
+                try {
+                    seed = (unsigned long) std::stol (optarg, nullptr, 0);
+                }catch(...) {
+                    std::cerr << "Error: Invalid seed value: " << optarg
+                              << " (use option '-h' for help)" << std::endl;
+                    exit (1);
                 }
                 break;
             case 'v':
