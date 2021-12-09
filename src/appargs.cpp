@@ -20,6 +20,13 @@
 #include <getopt.h>
 #include <appargs.hpp>
 
+#ifdef __GLIBC__
+#define PROGRAM_NAME program_invocation_short_name
+#else
+#include <stdlib.h>
+#define PROGRAM_NAME getprogname()
+#endif
+
 
 namespace macgen {
 
@@ -27,7 +34,7 @@ namespace macgen {
     //--------------------------------------------------------------------------
     static void print_usage_and_exit (std::ostream& out, int exit_code)
     {
-        out << "Usage: " << program_invocation_short_name << " [OPTIONS]"
+        out << "Usage: " << PROGRAM_NAME << " [OPTIONS]"
             << std::endl
             << "  Generate random locally administrated MAC address(es)." << std::endl
             << "  Each MAC address is by default printed using format 01-23-45-67-89-ab"
