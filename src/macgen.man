@@ -1,0 +1,51 @@
+.\" Manpage for macgen
+.\" Contact dan@ultramarin.se to correct errors or types.
+.TH macgen 1 "" "" "User Commands"
+
+
+.SH NAME
+macgen \- Generate random locally administered MAC address(es).
+
+
+.SH SYNOPSIS
+.B macgen
+[OPTIONS...]
+
+
+.SH DESCRIPTION
+macgen generates random locally administered MAC addresses and prints them to standard output.
+A locally administered MAC address has the second bit of the first byte set to 1 and will
+not collide with any network interface with a factory burned-in MAC address assigned by the IEEE.
+Locally administered MAC address are useful when creating virtual network interfaces.
+
+Each MAC address is by default printed using format 12-34-56-78-9a-bc
+
+
+.SH OPTIONS
+.TP
+.B -m, --multicast
+Generate multicast MAC address(es).
+.TP
+.B -c, --colon
+Print the MAC address using format 12:34:56:78:9a:bc
+.TP
+.B -d, --dots
+Print the MAC address using format 1234.5678.9abc
+.TP
+.B -u, --uppercase
+Print hex characters in uppercase instead of lowercase.
+.TP
+.B -n, --no-newline
+Do not output the trailing newline.
+.TP
+.B -r, --repeat=NUM
+Generate NUM MAC addresses.
+.TP
+.B -s, --seed=NUMBER
+Set a specific random seed.
+.TP
+.B -v, --version
+Print version and exit.
+.TP
+.B -h, --help
+Print this help message and exit.

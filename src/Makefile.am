@@ -24,3 +24,6 @@ macgen_SOURCES  =
 macgen_SOURCES += appargs.cpp
 macgen_SOURCES += appargs.hpp
 macgen_SOURCES += main.cpp
+
+dist_man1_MANS =
+dist_man1_MANS += macgen.man

@@ -38,19 +38,19 @@ namespace macgen {
     {
         out << "Usage: " << PROGRAM_NAME << " [OPTIONS]"
             << std::endl
-            << "  Generate random locally administrated MAC address(es)." << std::endl
-            << "  Each MAC address is by default printed using format 01-23-45-67-89-ab"
+            << "  Generate random locally administered MAC address(es)." << std::endl
+            << "  Each MAC address is by default printed using format 12-34-56-78-9a-bc"
             << std::endl
             << std::endl
             << "  -m, --multicast    Generate multicast MAC address(es)." << std::endl
-            << "  -c, --colon        Print the MAC address using format 01:23:45:67:89:ab" << std::endl
-            << "  -d, --dots         Print the MAC address using format 0123.4567.89ab" << std::endl
+            << "  -c, --colon        Print the MAC address using format 12:34:56:78:9a:bc" << std::endl
+            << "  -d, --dots         Print the MAC address using format 1234.5678.9abc" << std::endl
             << "  -u, --uppercase    Print hex characters in uppercase instead of lowercase." << std::endl
             << "  -n, --no-newline   Do not output the trailing newline." << std::endl
             << "  -r, --repeat=NUM   Generate NUM MAC addresses." << std::endl
             << "  -s, --seed=NUMBER  Set a specific random seed." << std::endl
             << "  -v, --version      Print version and exit." << std::endl
-            << "  -h, --help         Print this help message." << std::endl
+            << "  -h, --help         Print this help message and exit." << std::endl
             << std::endl;
 
         exit (exit_code);

@@ -47,7 +47,7 @@ int main (int argc, char* argv[])
         val[1] = random_value (re);
         val[2] = random_value (re);
 
-        val[0] |= 0x0200; // Locally administrated
+        val[0] |= 0x0200; // Locally administered
         if (args.multicast)
             val[0] |= 0x0100;  // Multicast
         else
