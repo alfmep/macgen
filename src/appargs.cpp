@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2022 Dan Arrhenius <dan@ultramarin.se>
  * Copyright (C) 2017,2021 Ultramarin Design AB <dan@ultramarin.se>
  *
  * This file is part of macgen.
@@ -118,7 +119,7 @@ namespace macgen {
                 break;
             case 's':
                 try {
-                    seed = (unsigned long) std::stol (optarg, nullptr, 0);
+                    seed = std::stoll (optarg, nullptr, 0);
                 }catch(...) {
                     std::cerr << "Error: Invalid seed value: " << optarg
                               << " (use option '-h' for help)" << std::endl;

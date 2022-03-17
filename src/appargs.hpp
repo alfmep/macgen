@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2022 Dan Arrhenius <dan@ultramarin.se>
  * Copyright (C) 2017,2021 Ultramarin Design AB <dan@ultramarin.se>
  *
  * This file is part of macgen.
@@ -28,7 +29,7 @@ namespace macgen {
         bool uppercase;
         bool no_newline;
         int repeat;
-        unsigned long seed;
+        long long seed;
 
         appargs (int argc, char* argv[]);
     };
