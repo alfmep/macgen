@@ -1,5 +1,5 @@
 #
-#  Copyright (C) 2017,2021 Ultramarin Design AB <dan@ultramarin.se>
+#  Copyright (C) 2017,2021,2022 Dan Arrhenius <dan@ultramarin.se>
 #
 #  This file is part of macgen.
 #
@@ -26,4 +26,4 @@ macgen_SOURCES += appargs.hpp
 macgen_SOURCES += main.cpp
 
 dist_man1_MANS =
-dist_man1_MANS += macgen.man
+dist_man1_MANS += macgen.1
