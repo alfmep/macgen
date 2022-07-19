@@ -22,6 +22,7 @@
 #include <string>
 #include <getopt.h>
 #include <appargs.hpp>
+#include <config.h>
 
 #ifdef __GLIBC__
 #define PROGRAM_NAME program_invocation_short_name

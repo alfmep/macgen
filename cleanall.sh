@@ -1,20 +1,14 @@
 #!/bin/sh
 
 if [ -f Makefile ]; then
-    make distclean
+    make clean
 fi
 
-rm -rf Makefile.in \
-    aclocal.m4 \
-    autom4te.cache \
-    config.guess \
-    config.sub \
-    configure \
-    depcomp \
-    install-sh \
-    ltmain.sh \
-    m4 \
-    missing \
-    src/Makefile.in \
-    ar-lib \
-    compile
+rm -rf \
+   CMakeFiles \
+   Makefile \
+   CMakeCache.txt \
+   cmake_install.cmake \
+   cmake_uninstall.cmake \
+   install_manifest.txt \
+   src/config.h
