@@ -4,6 +4,8 @@ CMakeCache.txt
 cmake_install.cmake
 cmake_uninstall.cmake
 install_manifest.txt
+CPackConfig.cmake
+CPackSourceConfig.cmake
 src/config.h
 *.o
 macgen
