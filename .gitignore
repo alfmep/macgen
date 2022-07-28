@@ -6,6 +6,7 @@ cmake_uninstall.cmake
 install_manifest.txt
 CPackConfig.cmake
 CPackSourceConfig.cmake
-src/config.h
+_CPack_Packages
+src/config.hpp
 *.o
 macgen

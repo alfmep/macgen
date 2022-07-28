@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2022 Dan Arrhenius <dan@ultramarin.se>
  * Copyright (C) 2017,2021 Ultramarin Design AB <dan@ultramarin.se>
  *
  * This file is part of macgen.
@@ -30,9 +31,12 @@ int main (int argc, char* argv[])
 {
     macgen::appargs args (argc, argv);
 
+    if (!args.parse_options())
+        return 1;
+
     std::random_device rd;
     std::default_random_engine re (rd());
-    std::uniform_int_distribution<uint16_t> random_value (1, 65535);
+    std::uniform_int_distribution<uint16_t> random_value (0, 65535);
 
     // Set random seed
     re.seed (args.seed);

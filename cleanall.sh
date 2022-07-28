@@ -6,9 +6,12 @@ fi
 
 rm -rf \
    CMakeFiles \
+   _CPack_Packages \
+   CPackConfig.cmake \
+   CPackSourceConfig.cmake \
    Makefile \
    CMakeCache.txt \
    cmake_install.cmake \
    cmake_uninstall.cmake \
    install_manifest.txt \
-   src/config.h
+   src/config.hpp
