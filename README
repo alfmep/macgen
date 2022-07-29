@@ -3,18 +3,20 @@ Generate one or more random locally administrated MAC addresses.
 
 
 Usage: macgen [OPTIONS]
-  Generate random locally administrated MAC address(es).
-  Each MAC address is by default printed using format 01-23-45-67-89-ab
+  Generate random locally administered MAC address(es).
+  Each MAC address is by default printed using format 12-34-56-78-9a-bc
 
   -m, --multicast    Generate multicast MAC address(es).
-  -c, --colon        Print the MAC address using format 01:23:45:67:89:ab
-  -d, --dots         Print the MAC address using format 0123.4567.89ab
+  -c, --colon        Print the MAC address using format 12:34:56:78:9a:bc
+  -d, --dots         Print the MAC address using format 1234.5678.9abc
   -u, --uppercase    Print hex characters in uppercase instead of lowercase.
   -n, --no-newline   Do not output the trailing newline.
   -r, --repeat=NUM   Generate NUM MAC addresses.
   -s, --seed=NUMBER  Set a specific random seed.
+                     Hexadecimal seed numbers begin with prefix 0x or 0X.
+                     Octal seed numbers begin with prefix 0.
   -v, --version      Print version and exit.
-  -h, --help         Print this help message.
+  -h, --help         Print this help message and exit.
 
 
 Examples:

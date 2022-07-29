@@ -75,23 +75,24 @@ namespace macgen {
     //--------------------------------------------------------------------------
     static void print_usage (std::ostream& out)
     {
+        const char p = opt_prefix;
         out << "Usage: " << PROGRAM_NAME << " [OPTIONS]";
         out << std::endl;
         out << "  Generate random locally administered MAC address(es)." << std::endl;
         out << "  Each MAC address is by default printed using format 12-34-56-78-9a-bc";
         out << std::endl;
         out << std::endl;
-        out << "  " << opt_prefix << "m, --multicast    Generate multicast MAC address(es)." << std::endl;
-        out << "  " << opt_prefix << "c, --colon        Print the MAC address using format 12:34:56:78:9a:bc" << std::endl;
-        out << "  " << opt_prefix << "d, --dots         Print the MAC address using format 1234.5678.9abc" << std::endl;
-        out << "  " << opt_prefix << "u, --uppercase    Print hex characters in uppercase instead of lowercase." << std::endl;
-        out << "  " << opt_prefix << "n, --no-newline   Do not output the trailing newline." << std::endl;
-        out << "  " << opt_prefix << "r, --repeat=NUM   Generate NUM MAC addresses." << std::endl;
-        out << "  " << opt_prefix << "s, --seed=NUMBER  Set a specific random seed." << std::endl;
-        out << "   "<<               "                  Hexadecimal seed numbers begin with prefix 0x or 0X." << std::endl;
-        out << "   "<<               "                  Octal seed numbers begin with prefix 0." << std::endl;
-        out << "  " << opt_prefix << "v, --version      Print version and exit." << std::endl;
-        out << "  " << opt_prefix << help_short_opt << ", --help         Print this help message and exit." << std::endl;
+        out << "  " << p << "m, --multicast      Generate multicast MAC address(es)." << std::endl;
+        out << "  " << p << "c, --colon          Print the MAC address using format 12:34:56:78:9a:bc" << std::endl;
+        out << "  " << p << "d, --dots           Print the MAC address using format 1234.5678.9abc" << std::endl;
+        out << "  " << p << "u, --uppercase      Print hex characters in uppercase instead of lowercase." << std::endl;
+        out << "  " << p << "n, --no-newline     Do not output the trailing newline." << std::endl;
+        out << "  " << p << "r, --repeat=NUM     Generate NUM MAC addresses." << std::endl;
+        out << "  " << p << "s, --seed=NUMBER    Set a specific random seed." << std::endl;
+        out << "   "<<      "                    Hexadecimal seed numbers begin with prefix 0x or 0X." << std::endl;
+        out << "   "<<      "                    Octal seed numbers begin with prefix 0." << std::endl;
+        out << "  " << p << "v, --version        Print version and exit." << std::endl;
+        out << "  " << p << help_short_opt << ", --help           Print this help message and exit." << std::endl;
         out << std::endl;
     }
 
