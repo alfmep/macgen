@@ -21,7 +21,7 @@ cmake_minimum_required (VERSION 3.15)
 # Project name and info
 #
 project (macgen
-    VERSION 1.0.4
+    VERSION 1.0.5
     LANGUAGES CXX
     DESCRIPTION "Generate one or more random locally administrated MAC addresses."
     HOMEPAGE_URL https://github.com/alfmep/macgen
