@@ -1,5 +1,5 @@
 
-Generate one or more random locally administrated MAC addresses.
+Generate one or more random locally administered MAC addresses.
 
 
 Usage: macgen [OPTIONS]
