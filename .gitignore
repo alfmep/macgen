@@ -8,5 +8,6 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 _CPack_Packages
 src/config.hpp
+src/macgen.1
 *.o
 macgen
