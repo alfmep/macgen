@@ -1,6 +1,6 @@
 .\" Manpage for macgen
 .\" Contact dan@ultramarin.se to correct errors or types.
-.TH macgen 1 "" "" "User Commands"
+.TH macgen "1" "" "@CMAKE_PROJECT_NAME@ @macgen_VERSION_MAJOR@.@macgen_VERSION_MINOR@.@macgen_VERSION_PATCH@" "User Commands"
 
 
 .SH NAME

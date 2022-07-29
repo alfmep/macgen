@@ -26,16 +26,6 @@
 #include <config.hpp>
 
 
-#ifndef PROGRAM_NAME
-#  ifdef __GLIBC__
-#    define PROGRAM_NAME program_invocation_short_name
-#  else
-#    include <stdlib.h>
-#    define PROGRAM_NAME getprogname()
-#  endif
-#endif
-
-
 namespace macgen {
 
 

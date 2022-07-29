@@ -14,4 +14,5 @@ rm -rf \
    cmake_install.cmake \
    cmake_uninstall.cmake \
    install_manifest.txt \
-   src/config.hpp
+   src/config.hpp \
+   src/macgen.1

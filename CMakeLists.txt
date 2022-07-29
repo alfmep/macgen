@@ -35,9 +35,7 @@ include (GNUInstallDirs)
 
 # Compiler flags
 #
-if (MSVC)
-    add_compile_options (/DPROGRAM_NAME="macgen")
-else()
+if (NOT MSVC)
     add_compile_options (-pipe -Wall -O2 -D_GNU_SOURCE)
 endif()
 
@@ -50,6 +48,9 @@ add_executable (macgen
     src/main.cpp
     )
 configure_file (src/config.hpp.in src/config.hpp)
+if (UNIX)
+    configure_file (src/macgen.1.in src/macgen.1)
+endif()
 # Compiler include search path
 target_include_directories (macgen PUBLIC
     "${PROJECT_SOURCE_DIR}/src"
@@ -65,7 +66,7 @@ install (TARGETS macgen DESTINATION bin)
 #
 if (UNIX)
     install (
-        FILES "${PROJECT_SOURCE_DIR}/src/macgen.1"
+        FILES "${PROJECT_BINARY_DIR}/src/macgen.1"
         DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_MANDIR}/man1")
 endif()
 
